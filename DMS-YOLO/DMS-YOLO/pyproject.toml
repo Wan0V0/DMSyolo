@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dms-yolo-beach"
+version = "0.1.0"
+description = "DMS-YOLO: detection of beach states based on YOLO11 and custom Dynamic Multi-Scale Block"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "AGPL-3.0"}
+dependencies = [
+  "torch>=2.0", "torchvision>=0.15", "numpy>=1.23", "opencv-python>=4.6",
+  "matplotlib>=3.3", "pillow>=7.1", "pyyaml>=5.3", "requests>=2.23",
+  "scipy>=1.4", "tqdm>=4.64", "psutil", "py-cpuinfo", "pandas>=1.1",
+  "seaborn>=0.11", "ultralytics-thop>=2.0.0", "einops>=0.6",
+]
+
+[project.scripts]
+dms-yolo = "ultralytics.cfg:entrypoint"
+
+[tool.setuptools.packages.find]
+include = ["ultralytics*"]
+
+[tool.setuptools.package-data]
+"ultralytics" = ["cfg/*.yaml", "cfg/datasets/*.yaml", "cfg/models/*.yaml", "cfg/models/11/*.yaml", "assets/*"]

@@ -1,0 +1,8 @@
+# Copy this file to dataset/beach-data.yaml and set the actual paths and names.
+path: /absolute/path/to/your/beach_dataset
+train: images/train
+val: images/val
+test: images/test
+# Replace placeholders with your actual labels (order must match YOLO txt class IDs).
+names:
+  0: state_0
